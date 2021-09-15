@@ -5,20 +5,6 @@ class Word:
         self.category = category
 
 
-    def get_score(self):
-        if self.difficulty == "easy":
-            score = 5
-        elif self.difficulty == "medium":
-            score = 10
-        elif self.difficulty == "hard":
-            score = 20
-        return score
-
-    def __str__(self) -> str:
-        return "word: {}, difficulty: {}, category: {}".format(
-            self.word, self.difficulty, self.category)
-        
-
 words = [
     Word("COMPUTER", "easy", "technology"),
     Word("DRIVER", "medium", "technology"),
@@ -26,6 +12,8 @@ words = [
     Word("KEYBOARD", "medium", "technology"),
     Word("MOTHER BOARD", "hard", "technology"),
     Word("CENTRAL PROCESSING UNIT", "hard", "technology"),
+    Word("MONITOR", "medium", "technology"),
+    Word("MEGABYTE", "hard", "technology"),
     Word("CAR", "easy", "vehicle"),
     Word("BUS", "easy", "vehicle"),
     Word("TRUCK", "medium", "vehicle"),
@@ -34,4 +22,4 @@ words = [
     Word("DUMP TRUCK", "hard", "vehicle"),
     Word("TAXI", "medium", "vehicle"),
     Word("GLIDER", "hard", "vehicle"),
-    ]
+]
