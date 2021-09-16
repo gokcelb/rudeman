@@ -18,9 +18,9 @@ There are categories of words - only "vehicle" and "technology" at the moment bu
 
 The game asks the user to choose one of these categories and assigns a random word from the chosen category. 
 
-The words have difficulty levels for scoring, but the scoring feature is not yet implemented. (It will be added in future commits.)
+The words have difficulty levels for scoring. The score is updated with each word the user guesses correctly.
 
-The random word is presented to the users in the form of underscores and as the user guesses the letters, either letters appear one by one on the screen or the hangman is gradually hung depending on whether they guessed right or wrong.
+The random word is presented to the user in the form of underscores and as the user guesses the letters, either letters appear one by one on the screen or the hangman is gradually hung depending on whether they guessed right or wrong.
 
 Pretty simple, right?
 
@@ -28,43 +28,85 @@ Here is how a sample game play of __Rudeman__ looks:
 
 ```bash
 # Which category do you choose? Technology or vehicle?
-> vehicle
+> technology
 
-___
+________
 
-# Type in a letter: 
+# Type in a letter:
+> m
+__M_____
+
+# Type in a letter:
+> o
+_OM_____
+
+...
+...
+...
+
+# Type in a letter:
 > r
-# R not in word.
+COMPUTER
 
+Your current score: 5
 
-
-
-
-/ \
-___
+NEW WORD
+_____
 
 # Type in a letter:
-> a
-# A not in word.
-
-
-
- |
- |
-/ \
-___
-
-# Type in a letter: 
-> u
-_U_
-
-# Type in a letter:
-> b
-BU_
-
-# Type in a letter:
-> s
-BUS
 ```
 
-Try playing it for yourself and see what happens when you hang the man!
+And here is what happens when you hang the man.
+
+```bash
+# Which category do you choose? Technology or vehicle?
+> vehicle   
+
+___
+
+# Type in a letter:
+> c
+
+C not in word.    
+
+
+
+
+
+/ \
+___
+
+...
+...
+...
+
+# Type in a letter:
+> c
+
+C not in word.
+ ________
+ |       |
+ |       O
+ |
+ |
+/ \
+___
+
+...
+...
+...
+
+# Type in a letter:
+> c
+
+C not in word.
+ ________
+ |       |
+ |       O
+ |     /( )\
+ |     _| |_
+/ \
+___
+
+Congragulations! You hanged the man you worthless piece of garbage.
+```
